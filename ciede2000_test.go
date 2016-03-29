@@ -1,4 +1,4 @@
-package cided2000
+package ciede2000
 
 import (
 	"image/color"
