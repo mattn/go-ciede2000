@@ -13,9 +13,9 @@ type LAB struct {
 
 func ToXYC(c color.Color) (float64, float64, float64) {
 	ta, tg, tb, _ := c.RGBA()
-	r := float64(ta) / 255.0
-	g := float64(tg) / 255.0
-	b := float64(tb) / 255.0
+	r := float64(ta) / 65535.0
+	g := float64(tg) / 65535.0
+	b := float64(tb) / 65535.0
 
 	if r > 0.04045 {
 		r = math.Pow(((r + 0.055) / 1.055), 2.4)
