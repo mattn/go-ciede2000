@@ -11,7 +11,7 @@ type LAB struct {
 	B float64
 }
 
-func ToXYC(c color.Color) (float64, float64, float64) {
+func ToXYZ(c color.Color) (float64, float64, float64) {
 	ta, tg, tb, _ := c.RGBA()
 	r := float64(ta) / 65535.0
 	g := float64(tg) / 65535.0
@@ -42,7 +42,7 @@ func ToXYC(c color.Color) (float64, float64, float64) {
 }
 
 func ToLAB(c color.Color) *LAB {
-	x, y, z := ToXYC(c)
+	x, y, z := ToXYZ(c)
 	x /= 95.047
 	y /= 100.000
 	z /= 108.883
